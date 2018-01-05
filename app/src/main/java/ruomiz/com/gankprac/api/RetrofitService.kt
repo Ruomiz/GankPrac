@@ -15,15 +15,16 @@ import java.util.concurrent.TimeUnit
  * Time  waits  for  none
  * desc ： xxxx
  */
-class RetrofitService private constructor(context: Context,baseUrl:String) {
+class RetrofitService private constructor(context: Context, baseUrl: String) {
     var okHttpClient: OkHttpClient? = null
     var retrofit: Retrofit? = null
     var cache: Cache? = null
     val DEFAULT_TIMEOUT: Long = 20
     var httpCacheDirectory: File? = null
-    var mContext : Context  = context
+    var mContext: Context = context
 
     val url = baseUrl
+
     init {
 
         //缓存地址
@@ -47,7 +48,6 @@ class RetrofitService private constructor(context: Context,baseUrl:String) {
                 .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)//全局读取超时时间
                 .build()
-        //创建retrofit
 
         retrofit = Retrofit.Builder()
                 .client(okHttpClient)
@@ -58,27 +58,11 @@ class RetrofitService private constructor(context: Context,baseUrl:String) {
     }
 
     companion object {
-//        @Volatile
-        var instance: RetrofitService? = null
-
         fun getInstance(context: Context, baseUrl: String): RetrofitService {
-//            if (instance == null) {
-//                synchronized(RetrofitService::class) {
-//                    if (instance == null) {
-                        instance = RetrofitService(context,baseUrl)
-//                    }
-//                }
-//            }
-            return instance!!
+            return RetrofitService(context, baseUrl)
         }
     }
 
-    fun <T> create(service: Class<T>?): T? {
-        if (service == null) {
-            throw RuntimeException("Api service is null!")
-        }
-        return retrofit?.create(service)
-    }
 }
 
 

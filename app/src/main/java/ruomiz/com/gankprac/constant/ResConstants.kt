@@ -14,7 +14,5 @@ interface ResConstants {
         val KAIYAN_URL: String
             get() = "http://baobab.kaiyanapp.com/api/"
 
-
-
     }
 }

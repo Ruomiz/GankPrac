@@ -11,13 +11,9 @@ import zlc.season.rxdownload3.core.DownloadConfig
 /**
  * Ruomiz on 2017/12/28.
  * Time  waits  for  none
- * desc ： xxxx
+ * desc ： app
  */
 class App : Application() {
-
-    init {
-//        mContext = this
-    }
 
     override fun onCreate() {
         super.onCreate()
@@ -29,9 +25,6 @@ class App : Application() {
         DownloadConfig.init(builder)
     }
 
-    companion object {
-//            lateinit var mContext : App
-    }
 
 
 }

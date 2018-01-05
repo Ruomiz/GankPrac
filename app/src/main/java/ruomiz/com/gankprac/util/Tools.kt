@@ -1,11 +1,10 @@
 package ruomiz.com.gankprac.util
 
 import android.content.Context
-import android.support.annotation.MainThread
 import android.view.Gravity
 import android.widget.Toast
 import io.reactivex.Observable
-import io.reactivex.Scheduler
+
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
