@@ -14,4 +14,3 @@
 
 ### 链接 ###
 [代码](https://github.com/Ruomiz/GankPrac)
-kotlin开发的一个练手app。Rxjava+retrofit+mvpho # GanKPrac
