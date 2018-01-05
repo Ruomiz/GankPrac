@@ -62,7 +62,12 @@ class RetrofitService private constructor(context: Context, baseUrl: String) {
             return RetrofitService(context, baseUrl)
         }
     }
-
+    fun <T> create(service: Class<T>?): T? {
+        if (service == null) {
+            throw RuntimeException("Api service is null!")
+        }
+        return retrofit?.create(service)
+    }
 }
 
 
